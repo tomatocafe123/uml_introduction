@@ -2,7 +2,7 @@
 rectangle 従業員登録システム{
     left to right direction
     usecase 登録する
-    usecase (<u>変更する</u>\n拡張点\n変更書をだす) as change
+    usecase (<u>変更する</u>\n拡張点\n変更書の提出) as update
     usecase 社員情報
     usecase (<u>参照する</u>\n拡張点\n盛岡システムの社員) as input
 }
@@ -10,6 +10,6 @@ rectangle 従業員登録システム{
 社員情報 <.登録する : <<include>>
 社員 <... (input) : <<extend>>
 社員情報 <. input : <<extend>>
-社員 <. change   :<<extend>>
-change <.人事担当者 :<<extend>>
+社員 <. update   :<<extend>>
+update <.人事担当者 :<<extend>>
 @enduml 
