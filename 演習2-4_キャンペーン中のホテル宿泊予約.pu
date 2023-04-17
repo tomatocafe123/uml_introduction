@@ -1,0 +1,10 @@
+@startuml ユースケース図
+   rectangle キャンペーン中{
+   usecase ログインする
+   usecase キャンペーン価格
+   usecase (<u>予約する</u>\n拡張点\nキャンペーン期間中) as input
+   }
+   利用者 <-- ログインする
+   ログインする <. input : <<include>>
+   input <. (キャンペーン価格) : <<extend>>
+@enduml

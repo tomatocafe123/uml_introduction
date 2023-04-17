@@ -1,0 +1,8 @@
+@startuml ユースケース図
+rectangle 予約{
+    usecase ログインする
+    usecase 予約する
+}
+利用者 <-- ログインする
+ログインする <. 予約する : <<include>>
+@enduml
