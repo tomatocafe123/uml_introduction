@@ -3,6 +3,6 @@ rectangle 予約{
     usecase ログインする
     usecase 予約する
 }
-利用者 <-- ログインする
+ログインする <-- 利用者 
 ログインする <. 予約する : <<include>>
 @enduml
