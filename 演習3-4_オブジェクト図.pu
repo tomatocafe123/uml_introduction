@@ -1,0 +1,10 @@
+@startuml タイヤ
+object "<u>車種類:車の情報</u>" as car {
+車種
+}
+object "<u>タイヤ種類:タイヤ</u>" as t{
+季節別タイヤ
+タイヤ本数=4
+}
+car "4" o--- "1" t :装着
+@enduml

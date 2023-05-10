@@ -1,0 +1,10 @@
+@startuml タイヤ
+class "車"{
+    - 車種:String
+}
+class "タイヤ"{
+    - タイヤ種別:String
+    - タイヤ本数:int
+}
+車 "4" o--- "1" タイヤ
+@enduml

@@ -1,0 +1,22 @@
+@startuml 資格取得
+object "<u>高橋洋平さん:社員</u>" as worker1{
+}
+object "<u>樋口正之さん:社員</u>" as worker2{
+
+}
+object "<u>A社:会社</u>" as  company {
+}
+object "<u>情報処理安全確保支援者:試験</u>" as exam1 {
+    申請日:2020/10/21
+}
+object "<u>Linuc試験Level1:試験</u>" as exam2 {
+    申請日:2021/3/38
+}
+
+worker1 "*" -up-o "1" company: 雇用 <
+worker2 "*" -up-o "1" company: 雇用 <
+worker1 "1" -- "1" exam1: 合格 
+worker1 "1" -- "1" exam2: 合格
+worker2 "1" -- "1" exam1: 合格
+
+@enduml
