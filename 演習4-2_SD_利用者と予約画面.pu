@@ -1,0 +1,13 @@
+@startuml 予約画面
+hide footbox
+participant "User:ログイン画面" as login
+participant ":予約画面"  as reserve
+activate login
+login -> reserve:ログインする()
+note right of login :メッセージを送る
+activate reserve
+reserve -> reserve: 認証する()
+activate reserve
+note right of reserve : 認証を呼出す
+deactivate reserve
+@enduml
