@@ -1,0 +1,13 @@
+@startuml ホテル予約
+hide footbox
+participant "controller:データ更新コントローラ" as cont
+participant "hotel:ホテル" as hotel
+participant ":予約" as reserve
+activate cont 
+cont -> hotel:予約操作を呼び出す()
+activate hotel
+hotel -> reserve:作成
+activate reserve
+hotel -> hotel: 予約登録操作を呼び出す()
+activate hotel
+@enduml
