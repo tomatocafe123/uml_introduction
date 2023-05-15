@@ -1,0 +1,22 @@
+@startuml ホテル予約
+hide footbox
+actor ユーザ as user
+participant ":ブラウザ" as b
+participant ":Webサーバ" as server
+participant ":画像サーバ" as img
+
+activate user
+user -> b :リンクを押す()
+activate b
+b -> server:ファイル名を伝達()
+activate server
+server -> img:該当ファイルの検索()
+activate img
+img -> img:画像ファイルを探す()
+img --> server:画像ファイルの提示()
+deactivate img
+server --> b:画像ファイルの再生()
+deactivate server
+b --> user:画像を見る()
+deactivate b
+@enduml
