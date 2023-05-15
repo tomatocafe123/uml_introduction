@@ -1,0 +1,27 @@
+@startuml 商品検索
+hide footbox
+actor 会員 as menber
+participant "商品検索画面" as dis <<boundary>>
+participant "商品検索コントローラ" as search <<control>>
+participant "商品情報" as info <<entity>>
+participant "商品" as goods <<entity>>
+
+activate menber
+menber ->dis:商品検索()
+activate dis
+dis -> search:商品情報確認()
+activate search
+create info
+search --> info:<<create>>生成()
+loop 商品カテゴリ数
+create goods
+search --> goods:<<create>>生成()
+search -> info:商品カテゴリ設定()
+activate info
+deactivate info
+end alt
+search --> dis:商品情報を表示()
+deactivate search
+dis -> dis:商品情報()
+activate dis
+@enduml
