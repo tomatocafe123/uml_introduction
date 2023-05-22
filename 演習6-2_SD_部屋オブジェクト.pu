@@ -1,0 +1,9 @@
+@startuml ステートマシン
+state 未使用{
+ left to right direction
+    空室 -up-> 予約済状態: 予約
+    予約済状態 -up-> 空室: キャンセル
+}
+    予約済状態 --> 使用状態:　入室
+    使用状態 --> 空室:　退室
+@enduml
