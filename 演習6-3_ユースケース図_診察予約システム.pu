@@ -1,0 +1,18 @@
+@startuml ユースケース図
+left to right direction
+actor 利用者 as u
+actor 看護師 as n
+rectangle 病院予約管理システム {
+    usecase 予約の登録をする
+    usecase 予約の取り消しをする
+    usecase 登録者番号を表示する
+    usecase 現在の順番を表示する
+}
+u -- 予約の登録をする
+u -- 予約の取り消しをする
+u -- 登録者番号を表示する
+u -- 現在の順番を表示する
+現在の順番を表示する -- n
+
+
+@enduml
