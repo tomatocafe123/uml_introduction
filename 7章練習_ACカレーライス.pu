@@ -1,0 +1,39 @@
+@startuml アクティビティ図
+title カレー
+
+start
+
+:具材を用意する;
+
+  fork 
+   :野菜を洗う;
+   fork 
+     :人参を切る;
+     :ジャガイモを切る; 
+     :玉ねぎを切る;
+     :お肉を切る;
+    fork
+   :具材を炒める;
+   ->
+   :水を入れて沸騰させる;
+   ->
+   :ルーを入れて煮込む;
+   ->
+   end fork
+   :ルーを盛る;
+   end fork
+fork again
+  :お米をとぐ;
+  fork 
+  :ご飯を炊く;
+ end fork 
+  :ご飯を盛る;
+  end fork
+  :カレー完成;
+  stop
+
+
+
+
+
+@enduml
