@@ -1,0 +1,15 @@
+@startuml ユースケース図
+left to right direction
+actor 客 as c
+actor ベンダー as b
+
+rectangle 自動販売機{
+usecase 購入
+usecase ドリンク追加
+usecase 料金回収
+}
+
+c --> 購入
+b --> ドリンク追加
+b --> 料金回収
+@enduml

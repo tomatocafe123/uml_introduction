@@ -1,0 +1,21 @@
+@startuml シーケンス図
+hide footbox
+actor 客 as guest 
+participant ":料金装置" as money 
+participant ":ボタン" as b 
+participant ":ベンダー装置" as bend 
+
+activate guest
+guest -> money :料金を投入する
+activate money
+money -> b : ボタンを押す
+deactivate money
+activate b 
+b -> bend :　選ばれたドリンクを伝える
+deactivate b
+activate bend
+bend --> bend : ドリンクを出す
+bend --> guest : ドリンク
+deactivate bend
+deactivate guest
+@enduml
