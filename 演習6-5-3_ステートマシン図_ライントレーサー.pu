@@ -1,0 +1,18 @@
+@startuml ステートマシン
+state 電源OFF{
+
+}
+state 電源ON {
+ state entry <<entryPoint>>
+ state exit <<exitPoint>>
+
+  entry --> 左旋回
+  左旋回 -down-> 右旋回 :ライン上
+  左旋回 <-up--- 右旋回 :ライン外
+  右旋回 --> exit
+}
+
+[*] -> 電源OFF
+電源OFF ---> entry :電源を入れる
+exit --up--> 電源OFF :電源をきる  
+@enduml

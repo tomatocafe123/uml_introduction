@@ -1,0 +1,20 @@
+@startuml ユースケース図
+left to right direction
+actor ユーザー as user 
+actor 光センサー as light 
+
+rectangle ライントレーサー{
+    usecase 電源を入れる
+    usecase (<u>右モーターをON</u>\nextend\nラインを外れる) as right
+    usecase (<u>左モーターをON</u>\n拡張点\nラインにのる) as left
+    usecase 右モーターOFF
+    usecase 左モーターOFF
+}
+
+user -->電源を入れる
+light --> right
+light --> left 
+right <.. 左モーターOFF :<<include>>
+left <.. 右モーターOFF :<<include>>
+
+@enduml
